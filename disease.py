@@ -57,6 +57,7 @@ data
 
 
 X = data.iloc[:,:-1]
+a=X
 y = data.iloc[:, -1]
 X_train, X_test, y_train, y_test =train_test_split(
 X, y, test_size = 0.2, random_state = 24)
@@ -158,7 +159,7 @@ test_X = test_data.iloc[:, :-1]
 test_X
 test_Y = test_data["prognosis"]
 
-test_Y
+# test_Y
 
 # Making prediction by take mode of predictions
 # made by all the classifiers
@@ -265,7 +266,6 @@ def app():
     st.title("Disease Prediction App")
 
     # Add a multi-select sidebar for symptoms
-    all_symptoms = X.columns.values
     selected_symptoms = st.sidebar.multiselect("Select Symptoms", all_symptoms)
 
     # Check if the user has selected any symptoms
