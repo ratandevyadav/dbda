@@ -5,6 +5,7 @@
 
 
 # Importing libraries
+import streamlit as st
 import numpy as np
 import pandas as pd
 from scipy.stats import mode
@@ -253,7 +254,6 @@ def main():
         st.write('SVM Model Prediction:', predictions['svm_model_prediction'])
         st.write('Final Prediction:', predictions['final_prediction'])
         
-
 main()        
         
 
