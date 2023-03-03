@@ -238,23 +238,23 @@ print(predictDisease("Itching,Skin Rash,Nodal Skin Eruptions"))
 # In[40]:
 
 
-# Creating the Streamlit app
-def main():
-    st.title('Disease Predictor')
-    st.write('Enter the symptoms separated by commas')
+# # Creating the Streamlit app
+# def main():
+#     st.title('Disease Predictor')
+#     st.write('Enter the symptoms separated by commas')
     
-    # Creating the input field
-    symptoms_input = st.text_input('Symptoms')
+#     # Creating the input field
+#     symptoms_input = st.text_input('Symptoms')
     
-    # Displaying the output
-    if st.button('Predict'):
-        predictions = predictDisease(symptoms_input)
-        st.write('Random Forest Model Prediction:', predictions['rf_model_prediction'])
-        st.write('Naive Bayes Model Prediction:', predictions['naive_bayes_prediction'])
-        st.write('SVM Model Prediction:', predictions['svm_model_prediction'])
-        st.write('Final Prediction:', predictions['final_prediction'])
+#     # Displaying the output
+#     if st.button('Predict'):
+#         predictions = predictDisease(symptoms_input)
+#         st.write('Random Forest Model Prediction:', predictions['rf_model_prediction'])
+#         st.write('Naive Bayes Model Prediction:', predictions['naive_bayes_prediction'])
+#         st.write('SVM Model Prediction:', predictions['svm_model_prediction'])
+#         st.write('Final Prediction:', predictions['final_prediction'])
         
-main()        
+# main()        
         
 
 
