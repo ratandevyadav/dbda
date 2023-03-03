@@ -258,55 +258,32 @@ main()
         
 
 
-# In[ ]:
 
 
-# def main():
-#     st.title('Disease Predictor')
-#     st.write('Enter the symptoms separated by commas')
-    
-#     # Creating the multiselect sidebar
-#     selected_symptoms = st.sidebar.multiselect('Select Symptoms', X.columns.values)
-    
-#     # Creating the input field
-#     symptoms_input = st.text_input('Symptoms')
-    
-#     # Combining the selected and input symptoms
-#     all_symptoms = list(set(selected_symptoms + symptoms_input.split(',')))
-    
-#     # Displaying the output
-#     if st.button('Predict'):
-#         predictions = predictDisease(','.join(all_symptoms))
-#         st.write('Random Forest Model Prediction:', predictions
+import streamlit as st
+def app():
+    st.title("Disease Prediction App")
+
+    # Add a multi-select sidebar for symptoms
+    all_symptoms = X.columns.values
+    selected_symptoms = st.sidebar.multiselect("Select Symptoms", all_symptoms)
+
+    # Check if the user has selected any symptoms
+    if selected_symptoms:
+        # Generate predictions for the selected symptoms
+        symptoms_input = ",".join(selected_symptoms)
+        predictions = predictDisease(symptoms_input)
+
+        # Display the predictions
+        st.subheader("Predictions:")
+        st.write("- Random Forest Classifier:", predictions["rf_model_prediction"])
+        st.write("- Naive Bayes Classifier:", predictions["naive_bayes_prediction"])
+        st.write("- Support Vector Machine Classifier:", predictions["svm_model_prediction"])
+        st.write("- Final Prediction:", predictions["final_prediction"])
 
 
-# In[49]:
-
-
-# import streamlit as st
-# def app():
-#     st.title("Disease Prediction App")
-
-#     # Add a multi-select sidebar for symptoms
-#     all_symptoms = X.columns.values
-#     selected_symptoms = st.sidebar.multiselect("Select Symptoms", all_symptoms)
-
-#     # Check if the user has selected any symptoms
-#     if selected_symptoms:
-#         # Generate predictions for the selected symptoms
-#         symptoms_input = ",".join(selected_symptoms)
-#         predictions = predictDisease(symptoms_input)
-
-#         # Display the predictions
-#         st.subheader("Predictions:")
-#         st.write("- Random Forest Classifier:", predictions["rf_model_prediction"])
-#         st.write("- Naive Bayes Classifier:", predictions["naive_bayes_prediction"])
-#         st.write("- Support Vector Machine Classifier:", predictions["svm_model_prediction"])
-#         st.write("- Final Prediction:", predictions["final_prediction"])
-
-
-# if __name__ == '__main__':
-#     app()
+if __name__ == '__main__':
+    app()
     
 
 
