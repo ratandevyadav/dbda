@@ -40,8 +40,8 @@ model = LinearRegression()
 model.fit(X_train, y_train)
 
 # Create a form for entering user input
-st.title("Boston Housing Prices Prediction lawnde ka house prediction")
-st.write("Enter the values of the selected features to make a prediction:  madarchod dekh ka raha hai values dal")
+st.title("Boston Housing Prices Prediction :: Developed by Ratan dev yadav")
+st.write("Enter the values of the selected features to make a prediction: ")
 feature_values = {}
 for feature_name in selected_features:
     value = st.number_input(feature_name, step=0.1)
@@ -52,7 +52,7 @@ input_df = pd.DataFrame([feature_values])
 prediction = model.predict(input_df[selected_features])[0]
 
 # Display the prediction on the web page
-st.write("Prediction:  yeh raha tera price aukaat hai teri  ", prediction)
+st.write("Prediction: expected price  ", prediction)
 
 # Evaluate the model performance on the test set
 y_pred = model.predict(X_test)
