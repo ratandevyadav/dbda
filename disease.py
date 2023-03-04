@@ -156,7 +156,7 @@ test_data["prognosis"] = encoder.fit_transform(test_data["prognosis"])
 # test_data
 
 test_X = test_data.iloc[:, :-1]
-test_X
+# test_X
 test_Y = test_data["prognosis"]
 
 # test_Y
