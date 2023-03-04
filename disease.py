@@ -191,7 +191,7 @@ symptoms = X.columns.values
 # input symptoms into numerical form
 symptom_index = {}
 for index, value in enumerate(symptoms):
-	symptom = " ".join([i.capitalize() for i in value.split("_")])
+# 	symptom = " ".join([i.capitalize() for i in value.split("_")])
 	symptom_index[symptom] = index
 
 data_dict = {
