@@ -36,10 +36,10 @@ temp_df = pd.DataFrame({
 	"Counts": disease_counts.values
 })
 
-plt.figure(figsize = (18,8))
-sns.barplot(x = "Disease", y = "Counts", data = temp_df)
-plt.xticks(rotation=90)
-plt.show()
+# plt.figure(figsize = (18,8))
+# sns.barplot(x = "Disease", y = "Counts", data = temp_df)
+# plt.xticks(rotation=90)
+# plt.show()
 
 
 # In[29]:
@@ -86,10 +86,10 @@ for model_name in models:
 	scores = cross_val_score(model, X, y, cv = 10,
 							n_jobs = -1,
 							scoring = cv_scoring)
-	print("=="*30)
-	print(model_name)
-	print(f"Scores: {scores}")
-	print(f"Mean Score: {np.mean(scores)}")
+# 	print("=="*30)
+# 	print(model_name)
+# 	print(f"Scores: {scores}")
+# 	print(f"Mean Score: {np.mean(scores)}")
 
 
 # In[20]:
@@ -104,37 +104,37 @@ print(f"Accuracy on train data by SVM Classifier: {accuracy_score(y_train, svm_m
 
 print(f"Accuracy on test data by SVM Classifier: {accuracy_score(y_test, preds)*100}")
 cf_matrix = confusion_matrix(y_test, preds)
-plt.figure(figsize=(12,8))
-sns.heatmap(cf_matrix, annot=True)
-plt.title("Confusion Matrix for SVM Classifier on Test Data")
-plt.show()
+# plt.figure(figsize=(12,8))
+# sns.heatmap(cf_matrix, annot=True)
+# plt.title("Confusion Matrix for SVM Classifier on Test Data")
+# plt.show()
 
 # Training and testing Naive Bayes Classifier
 nb_model = GaussianNB()
 nb_model.fit(X_train, y_train)
 preds = nb_model.predict(X_test)
-print(f"Accuracy on train data by Naive Bayes Classifier: {accuracy_score(y_train, nb_model.predict(X_train))*100}")
+# print(f"Accuracy on train data by Naive Bayes Classifier: {accuracy_score(y_train, nb_model.predict(X_train))*100}")
 
 print(f"Accuracy on test data by Naive Bayes Classifier: {accuracy_score(y_test, preds)*100}")
 cf_matrix = confusion_matrix(y_test, preds)
-plt.figure(figsize=(12,8))
-sns.heatmap(cf_matrix, annot=True)
-plt.title("Confusion Matrix for Naive Bayes Classifier on Test Data")
-plt.show()
+# plt.figure(figsize=(12,8))
+# sns.heatmap(cf_matrix, annot=True)
+# plt.title("Confusion Matrix for Naive Bayes Classifier on Test Data")
+# plt.show()
 
 # Training and testing Random Forest Classifier
 rf_model = RandomForestClassifier(random_state=18)
 rf_model.fit(X_train, y_train)
 preds = rf_model.predict(X_test)
-print(f"Accuracy on train data by Random Forest Classifier: {accuracy_score(y_train, rf_model.predict(X_train))*100}")
+# print(f"Accuracy on train data by Random Forest Classifier: {accuracy_score(y_train, rf_model.predict(X_train))*100}")
 
-print(f"Accuracy on test data by Random Forest Classifier: {accuracy_score(y_test, preds)*100}")
+# print(f"Accuracy on test data by Random Forest Classifier: {accuracy_score(y_test, preds)*100}")
 
 cf_matrix = confusion_matrix(y_test, preds)
-plt.figure(figsize=(12,8))
-sns.heatmap(cf_matrix, annot=True)
-plt.title("Confusion Matrix for Random Forest Classifier on Test Data")
-plt.show()
+# plt.figure(figsize=(12,8))
+# sns.heatmap(cf_matrix, annot=True)
+# plt.title("Confusion Matrix for Random Forest Classifier on Test Data")
+# plt.show()
 
 
 # In[37]:
@@ -173,11 +173,11 @@ final_preds = [mode([i,j,k])[0][0] for i,j,
 print(f"Accuracy on Test dataset by the combined model: {accuracy_score(test_Y, final_preds)*100}")
 
 cf_matrix = confusion_matrix(test_Y, final_preds)
-plt.figure(figsize=(12,8))
+# plt.figure(figsize=(12,8))
 
-sns.heatmap(cf_matrix, annot = True)
-plt.title("Confusion Matrix for Combined Model on Test Dataset")
-plt.show()
+# sns.heatmap(cf_matrix, annot = True)
+# plt.title("Confusion Matrix for Combined Model on Test Dataset")
+# plt.show()
 
 
 # In[39]:
@@ -242,8 +242,8 @@ def predictDisease(symptoms):
 # Creating the Streamlit app
 def main():
     st.title('Disease Predictor')
+    st.write('choose from the symptoms'symptoms)
     st.write('Enter the symptoms separated by commas')
-    
     # Creating the input field
     symptoms_input = st.text_input('Symptoms')
     
