@@ -261,7 +261,7 @@ def predictDisease(symptoms):
 
 
 
-# import streamlit as st
+# # import streamlit as st
 # def app():
 #     st.title("Disease Prediction App")
 
@@ -285,40 +285,26 @@ def predictDisease(symptoms):
 #     app()
     
 
-
 import streamlit as st
 
 def app():
-    st.title("Disease Prediction App developed by ratan dev yadav ")
+    st.title("Disease Prediction App developed by Ratan Dev Yadav")
 
     # Add a multi-select sidebar for symptoms
     selected_symptoms = st.sidebar.multiselect("Select symptoms", symptoms)
 
-    # Check if the user has selected any symptoms
-    if selected_symptoms:
+    # Add a button to generate the prediction
+    if st.button("Generate Prediction") and selected_symptoms:
         # Generate predictions for the selected symptoms
         symptoms_input = ",".join(selected_symptoms)
         predictions = predictDisease(symptoms_input)
 
-        #Display the predictions
-	
+        # Display the predictions
         st.subheader("Predictions:")
         st.write("- Random Forest Classifier:", predictions["rf_model_prediction"])
         st.write("- Naive Bayes Classifier:", predictions["naive_bayes_prediction"])
         st.write("- Support Vector Machine Classifier:", predictions["svm_model_prediction"])
         st.write("- Final Prediction:", predictions["final_prediction"])
-
-        # Add a button for prediction
-        if st.button('Get Prediction'):
-		st.subheader("Predictions:")
-		st.write("- Random Forest Classifier:", predictions["rf_model_prediction"])
-		st.write("- Naive Bayes Classifier:", predictions["naive_bayes_prediction"])
-                st.write("- Support Vector Machine Classifier:", predictions["svm_model_prediction"])
-                st.write("- Final Prediction:", predictions["final_prediction"])
-
-	
-            # Here, you can call a function to perform some action when the button is clicked
-		
 
 if __name__ == '__main__':
     app()
