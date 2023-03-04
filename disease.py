@@ -50,14 +50,14 @@ temp_df = pd.DataFrame({
 encoder = LabelEncoder()
 data["prognosis"] = encoder.fit_transform(data["prognosis"])
 
-data
+# data
 
 
 # In[30]:
 
 
 X = data.iloc[:,:-1]
-a=X
+# a=X
 y = data.iloc[:, -1]
 X_train, X_test, y_train, y_test =train_test_split(
 X, y, test_size = 0.2, random_state = 24)
@@ -153,7 +153,7 @@ test_data = pd.read_csv("Testing.csv").dropna(axis=1)
 
 test_data["prognosis"] = encoder.fit_transform(test_data["prognosis"])
 
-test_data
+# test_data
 
 test_X = test_data.iloc[:, :-1]
 test_X
