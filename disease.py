@@ -282,8 +282,8 @@ main()
 #         st.write("- Final Prediction:", predictions["final_prediction"])
 
 # 
-if __name__ == '__main__':
-    app()
+# if __name__ == '__main__':
+#     app()
     
 
 
