@@ -241,8 +241,8 @@ def predictDisease(symptoms):
 
 # Creating the Streamlit app
 def main():
-    st.title('Disease Predictor')
-    st.write('choose from the symptoms'symptoms)
+    st.title('Disease Predictor Developed by Ratan dev Yadav')
+    st.write('choose from the symptoms',symptoms)
     st.write('Enter the symptoms separated by commas')
     # Creating the input field
     symptoms_input = st.text_input('Symptoms')
