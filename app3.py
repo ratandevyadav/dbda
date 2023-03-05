@@ -40,7 +40,7 @@ model = LinearRegression()
 model.fit(X_train, y_train)
 
 # Create a form for entering user input
-st.title("Boston Housing Prices Prediction :: Developed by Ratan dev yadav")
+st.title("Boston Housing Prices Prediction :: Developed by Ratan dev yadav with collaboration with ishwar kamthe")
 st.write("Enter the values of the selected features to make a prediction: ")
 feature_values = {}
 for feature_name in selected_features:
